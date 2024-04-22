@@ -26,8 +26,7 @@ const App = () => {
           return prev + 1;
         });
       }, 1000);
-      axios.patch("http://192.168.1.140:5000/api/run_motor", { "run": true })
-        .then(response => console.log(response))
+      axios.patch("http://192.168.1.140:5000/api/run_motor", { run: true })
         .catch(error => console.error(error));
     } else {
       message.error("Vui lòng nhập một số nguyên dương", 3);
@@ -38,8 +37,7 @@ const App = () => {
     clearInterval(timerRef.current);
     setCounting(false);
     setRemainingSeconds(0);
-    axios.patch("http://192.168.1.140:5000/api/run_motor", { "run": false })
-    .then(response => console.log(response))
+    axios.patch("http://192.168.1.140:5000/api/run_motor", { run: false })
     .catch(error => console.error(error));
   };
 
